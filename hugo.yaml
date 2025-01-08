@@ -1,0 +1,61 @@
+baseURL: https://ivanfedotov.dev/
+languageCode: en-us
+title: Ivan Fedotov
+theme: ["PaperMod"]
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+
+params:
+  author: Ivan Fedotov
+  ShowFullTextinRSS: true
+  defaultTheme: auto
+
+  assets:
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+
+  homeInfoParams:
+    Title: Hello!
+    Content: >
+      I'm Ivan. Welcome to my blog :)
+
+  editPost:
+    URL: "https://github.com/ivanfed0t0v/ivanfedotov.dev/tree/content"
+    Text: "🖊 Suggest an edit"
+    appendFilePath: true
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
