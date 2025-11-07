@@ -1,12 +1,14 @@
 baseURL: https://ivanfedotov.dev/
 languageCode: en-us
 title: Ivan Fedotov
-theme: ["PaperMod"]
+theme: ["hugo-admonitions", "PaperMod"]
+copyright: "&copy; 2025 Ivan Fedotov [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)"
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableGitInfo: true
 
 minify:
   disableXML: true
@@ -18,10 +20,6 @@ menu:
       name: Blog
       url: /posts/
       weight: 10
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 20
     - identifier: search
       name: Search
       url: /search/
@@ -30,18 +28,26 @@ menu:
 params:
   author: Ivan Fedotov
   ShowFullTextinRSS: true
+  ShowRssButtonInSectionTermList: true
   defaultTheme: auto
+  ShowCodeCopyButtons: true
+  showtoc: true
+  DateFormat: "2 Jan 2006"
 
   assets:
     favicon: "favicon.ico"
     favicon16x16: "favicon-16x16.png"
     favicon32x32: "favicon-32x32.png"
     apple_touch_icon: "apple-touch-icon.png"
+    disableHLJS: true
 
   homeInfoParams:
     Title: Hello!
     Content: >
       I'm Ivan. Welcome to my blog :)
+      I'm an experienced software engineer with background in infosec, passionate about containers, linux and open source.
+      I Hope you'll find something valuable here.
+      Feel free to reach out on any of the platforms below.
 
   editPost:
     URL: "https://github.com/ivanfed0t0v/ivanfedotov.dev/tree/content"
@@ -59,3 +65,20 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/ivanfed0t0v"
+    - name: "email"
+      url: "mailto:contact@ivanfedotov.dev"
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai
